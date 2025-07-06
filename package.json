@@ -9,10 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.3.4",
+    "@emailjs/browser": "^4.4.1",
+    "framer-motion": "^12.23.0",
+    "lucide-react": "^0.525.0",
+    "next": "^15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "react-parallax-tilt": "^1.7.299",
+    "react-scroll": "^1.9.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

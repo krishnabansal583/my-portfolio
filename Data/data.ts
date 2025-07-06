@@ -1,246 +1,211 @@
+import {
+  FaCode,
+  FaServer,
+  FaMobile,
+  FaDatabase,
+  FaChartLine,
+  FaShieldAlt,
+  FaRobot,
+  FaLayerGroup,
+} from "react-icons/fa";
+
+// Define colorMap with const assertion for type safety
+const colorMap = {
+  "from-purple-600/80": {
+    gradient: "from-purple-600/80 to-purple-900/50",
+    hex: "#9333EA",
+  },
+  "from-blue-600/80": {
+    gradient: "from-blue-600/80 to-blue-900/50",
+    hex: "#2563EB",
+  },
+  "from-green-600/80": {
+    gradient: "from-green-600/80 to-green-900/50",
+    hex: "#16A34A",
+  },
+  "from-yellow-600/80": {
+    gradient: "from-yellow-600/80 to-yellow-900/50",
+    hex: "#CA8A04",
+  },
+  "from-pink-600/80": {
+    gradient: "from-pink-600/80 to-pink-900/50",
+    hex: "#DB2777",
+  },
+  "from-red-600/80": {
+    gradient: "from-red-600/80 to-red-900/50",
+    hex: "#DC2626",
+  },
+  "from-indigo-600/80": {
+    gradient: "from-indigo-600/80 to-indigo-900/50",
+    hex: "#4F46E5",
+  },
+  "from-cyan-600/80": {
+    gradient: "from-cyan-600/80 to-cyan-900/50",
+    hex: "#06B6D4",
+  },
+} as const;
+
+// Define Service type
+export type Service = {
+  id: number;
+  title: string;
+  description: string;
+  iconName: keyof typeof iconMap;
+  color: keyof typeof colorMap; // Restrict to valid color keys
+};
+
+// Define Project type
+export type Project = {
+  id: number;
+  title: string;
+  image: string;
+  githubUrl: string;
+  description: string;
+  technologies: string;
+  duration: string;
+};
+
+// Icon mapping
+export const iconMap = {
+  FaCode,
+  FaServer,
+  FaMobile,
+  FaDatabase,
+  FaChartLine,
+  FaShieldAlt,
+  FaRobot,
+  FaLayerGroup,
+};
+
+// BaseInfo
 export const BaseInfo = {
   name: "Krishna Bansal",
   position: "Full Stack Web Developer",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit porro numquam ad, vero consequuntur aperiam cumque voluptatum pariatur veniam? Qui facilis est ipsam odio cum!",
-  profilePic: "/images/hero.png",
+    "Code. Create. Deploy. Repeat. Building full-stack solutions that work as beautifully as they look - one commit at a time.",
+  profilePic: "/images/profile.jpeg",
 };
 
+// About Info
 export const aboutInfo = {
   title: "Crafting Web Application with Passion and Precision",
   description:
-    "At webdev warriors, we’re a dedicated team of designers and developers committed to delivering tailored web solutions. With a blend of creativity and technical expertise, we help businesses elevate their online presence and achieve their goals",
+    "I’m a dedicated Software Developer with a passion for creating impactful and user-friendly digital solutions. I enjoy solving complex problems and turning ideas into reality through clean and efficient code. My goal is to craft seamless user experiences and continually grow as a developer. I believe in learning, adapting, and building with purpose.",
   client: "50+",
-  experience: "3+",
-  project: "200+",
-  website: "100+",
+  experience: "1+",
+  project: "6+",
+  website: "10+",
 };
 
-export const servicesData = [
+// Services Data
+export const servicesData: Service[] = [
   {
     id: 1,
-    title: " Web Applications",
-    description: "Tailored web apps built with the latest technologies.",
-    icon: "/images/s1.png",
+    title: "Full Stack Development",
+    description:
+      "End-to-end web applications using MERN stack with 30% performance optimization",
+    iconName: "FaLayerGroup",
+    color: "from-purple-600/80",
   },
   {
     id: 2,
-    title: "E-commerce Websites",
-    description:
-      "Secure online stores with user-friendly shopping and payments.",
-    icon: "/images/s2.png",
+    title: "Frontend Development",
+    description: "Responsive UIs with React, Next.js and modern CSS frameworks",
+    iconName: "FaCode",
+    color: "from-blue-600/80",
   },
   {
     id: 3,
-    title: "API Integration",
+    title: "Backend Development",
     description:
-      "Seamless integration for smooth data sharing and functionality.",
-    icon: "/images/s3.png",
+      "Robust APIs and server logic with Node.js, Express and MongoDB",
+    iconName: "FaServer",
+    color: "from-green-600/80",
   },
   {
     id: 4,
-    title: "User Interfaces",
-    description:
-      "Engaging, responsive front-end designs for better user experiences.",
-    icon: "/images/s4.png",
-  },
-  {
-    id: 5,
     title: "Database Solutions",
     description:
-      "Efficient and scalable database management for your data needs.",
-    icon: "/images/s5.png",
-  },
-  {
-    id: 6,
-    title: "Real-Time Features",
-    description: "Add live chat, notifications, and real-time data updates.",
-    icon: "/images/s6.png",
-  },
-  {
-    id: 7,
-    title: "Speed Optimization",
-    description: "Boost performance with faster load times and optimization.",
-    icon: "/images/s7.png",
-  },
-  {
-    id: 8,
-    title: "Website Management",
-    description: "Easy content management systems with flexible controls.",
-    icon: "/images/s8.png",
-  },
-];
-
-export const projectData = [
-  {
-    id: 1,
-    image: "/images/p1.png",
-    url: "https://agency-opal-eight.vercel.app/",
-  },
-  {
-    id: 2,
-    image: "/images/p2.png",
-    url: "https://burger-pearl.vercel.app/",
-  },
-  {
-    id: 3,
-    image: "/images/p3.png",
-    url: "https://game-ecommerce-yt.vercel.app/",
-  },
-  {
-    id: 4,
-    image: "/images/p4.png",
-    url: "https://elearning-yt.vercel.app/",
+      "Efficient MongoDB and MySQL database architecture and optimization",
+    iconName: "FaDatabase",
+    color: "from-yellow-600/80",
   },
   {
     id: 5,
-    image: "/images/p5.png",
-    url: "https://invest-peach.vercel.app/",
+    title: "Performance Optimization",
+    description:
+      "Applications with 30% faster load times through advanced optimization",
+    iconName: "FaChartLine",
+    color: "from-pink-600/80",
   },
   {
     id: 6,
-    image: "/images/p6.png",
-    url: "https://job-chi-ruby.vercel.app/",
+    title: "Authentication Systems",
+    description:
+      "Secure JWT authentication for 4500+ users with role-based access",
+    iconName: "FaShieldAlt",
+    color: "from-red-600/80",
   },
   {
     id: 7,
-    image: "/images/p7.png",
-    url: "https://wdw-ecom.vercel.app/",
+    title: "AI Integration",
+    description:
+      "Machine learning algorithms improving diagnostic accuracy by 15%",
+    iconName: "FaRobot",
+    color: "from-indigo-600/80",
   },
   {
     id: 8,
-    image: "/images/p8.png",
-    url: "https://webhost-ten.vercel.app/",
+    title: "Mobile Responsive Apps",
+    description:
+      "Cross-platform applications with Material UI and responsive design",
+    iconName: "FaMobile",
+    color: "from-cyan-600/80",
   },
 ];
 
-export const skillsData = [
+// Project Data
+export const projectData: Project[] = [
   {
     id: 1,
-    title: "React",
-    image: "/images/react.svg",
-    percent: "90%",
+    title: "Bookstore",
+    image: "/images/bookstore.webp",
+    githubUrl: "https://github.com/krishnabansal583/BookStore.git",
+    description:
+      "Developed an interactive Bookstore application using the MERN stack, incorporating a user-friendly interface and personalized recommendations; the solution is now utilized by over 300 active users monthly. Established multi-layered authentication workflows that supported 4,500+ users in securely signing up, signing in, and accessing tailored order histories; equipped admin team with essential tools for managing book listings and user orders. Designed an intuitive admin interface to edit, delete, and approve user orders, ensuring efficient order management and enhancing the overall user experience.",
+    technologies: "MERN Stack, APIs, Authentication, JavaScript",
+    duration: "May 2024 - July 2024",
   },
   {
     id: 2,
-    title: "CSS",
-    image: "/images/css.svg",
-    percent: "97%",
+    title: "Diagnobiz",
+    image: "/images/diagobiz.webp",
+    githubUrl:
+      "https://github.com/krishnabansal583/Product-Calculator-frontend.git",
+    description:
+      "Developed a comprehensive diagnostic testing platform with separate user and admin interfaces, featuring detailed product listings, secure authentication, and responsive design. Implemented advanced admin functionalities including bulk product upload via CSV/Excel files, product management (edit/delete), user approval workflow, and invoice generation system. Created a WhatsApp sharing feature enabling users to easily distribute product details and images, along with an automated invoice notification system for improved customer communication.",
+    technologies: "MERN Stack, PWA, Node.js, MongoDB, Responsive",
+    duration: "January 2025 - March 2025",
   },
   {
     id: 3,
-    title: "JavaScript",
-    image: "/images/js.svg",
-    percent: "77%",
+    title: "Portfolio Website",
+    image: "/images/portfolio.png",
+    githubUrl: "https://github.com/krishnabansal583/my-portfolio.git",
+    description:
+      "Revamped personal portfolio website utilizing Next, Tailwind CSS, and TypeScript; integrated seamless navigation, resulting in a 40% increase in page views and a 20% increase in session duration.",
+    technologies: "Next.js, Tailwind CSS, TypeScript, Framer Motion",
+    duration: "June 2025 - July 2025",
   },
   {
     id: 4,
-    title: "TypeScript",
-    image: "/images/ts.svg",
-    percent: "67%",
-  },
-  {
-    id: 5,
-    title: "HTML",
-    image: "/images/html.svg",
-    percent: "67%",
-  },
-  {
-    id: 6,
-    title: "Node JS",
-    image: "/images/node.svg",
-    percent: "77%",
-  },
-  {
-    id: 7,
-    title: "MongoDB",
-    image: "/images/mongo.svg",
-    percent: "65%",
-  },
-  {
-    id: 8,
-    title: "Python",
-    image: "/images/python.svg",
-    percent: "55%",
-  },
-  {
-    id: 9,
-    title: "Firebase",
-    image: "/images/firebase.svg",
-    percent: "75%",
-  },
-  {
-    id: 10,
-    title: "Vue",
-    image: "/images/vue.svg",
-    percent: "35%",
+    title: "DocNow",
+    image: "/images/docnow.png",
+    githubUrl: "https://github.com/krishnabansal583/DocNow.git",
+    description:
+      "Developed a doctor appointment booking system using the MERN stack, enabling patients to register, view doctors by location or specialty, and manage bookings. Implemented secure authentication and role-based access for doctors and patients, with an admin panel for managing appointments and user data. Integrated responsive design and real-time notifications to enhance user experience.",
+    technologies: "MERN Stack, Node.js, MongoDB, JavaScript, Responsive",
+    duration: "September 2024 - November 2024",
   },
 ];
 
-export const clientReviews = [
-  {
-    name: "John Doe",
-    review:
-      "Exceptional service! The team delivered exactly what we needed on time. Very professional",
-    rating: 5,
-    profession: "Marketing Manager",
-    image: "/images/u1.jpg",
-  },
-  {
-    name: "Jane Smith",
-    review:
-      "Highly skilled developers who understand the client's vision and execute perfectly.",
-    rating: 4.8,
-    profession: "Business Owner",
-    image: "/images/u2.jpg",
-  },
-  {
-    name: "Michael Johnson",
-    review:
-      "Great communication and excellent results. Our new site performs beautifully.",
-    rating: 4.6,
-    profession: "Project Coordinator",
-    image: "/images/u3.jpg",
-  },
-  {
-    name: "Emily Brown",
-    review:
-      "Professional, efficient, and highly knowledgeable. Would definitely recommend their services!",
-    rating: 4.9,
-    profession: "Creative Director",
-    image: "/images/u4.jpg",
-  },
-];
-
-export const blogs = [
-  {
-    id: 1,
-    title: "Top Web Development Trends to Watch in 2024",
-    summary:
-      "Explore the key web development trends for 2024 and their impact on your business.",
-    date: "August 18, 2024",
-    image: "/images/b1.jpg",
-  },
-  {
-    id: 2,
-    title: "Why Your Business Needs a Custom Web Application",
-    summary:
-      "Discover why custom web applications are crucial for driving business growth and efficiency.",
-    date: "August 10, 2024",
-    image: "/images/b2.jpg",
-  },
-  {
-    id: 3,
-    title: "The Importance of Website Speed Optimization",
-    summary:
-      "Understand how website speed impacts user experience and learn essential optimization tips.",
-    date: "July 25, 2024",
-    image: "/images/b3.jpg",
-  },
-];
-
-export const contactData = {
-  phone: "+88(012345 789)",
-  email: "example@gmail.com",
-  address: "Dhaka , Bangladesh",
-};
