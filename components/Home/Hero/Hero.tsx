@@ -29,13 +29,13 @@ const Hero = () => {
   const [timeOfDay, setTimeOfDay] = useState("");
   const [downloadStatus, setDownloadStatus] = useState("");
 
-  // Move roles array inside useMemo to fix react-hooks/exhaustive-deps warning
+  // Remove dependency array from useMemo for roles
   const roles = useMemo(() => [
     BaseInfo.position,
     "Software Developer",
     "Full Stack Developer",
     "Problem Solver",
-  ], [BaseInfo.position]);
+  ], []);
 
   // Handle CV download
   const handleDownloadCV = () => {
@@ -52,7 +52,7 @@ const Hero = () => {
         document.body.removeChild(link);
 
         setDownloadStatus("Download complete!");
-      } catch (error) {
+      } catch {
         setDownloadStatus("Download failed. Please try again.");
       }
 
