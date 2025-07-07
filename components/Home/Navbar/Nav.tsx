@@ -29,7 +29,7 @@ const Nav = ({ openNav }: Props) => {
   }, []);
 
   const handleSmoothScroll = (
-    e: React.MouseEvent<HTMLAnchorElement>,
+    e: React.MouseEvent<HTMLAnchorElement> | React.MouseEvent<HTMLButtonElement>,
     url: string
   ) => {
     e.preventDefault();
@@ -76,7 +76,7 @@ const Nav = ({ openNav }: Props) => {
                 key={navlink.id}
                 href={navlink.url}
                 scroll={false}
-                onClick={(e) => handleSmoothScroll(e as any, navlink.url)}
+                onClick={(e) => handleSmoothScroll(e, navlink.url)}
                 className="nav__link relative text-white transition-colors duration-200 hover:text-purple-400 cursor-pointer group"
               >
                 {navlink.label}
@@ -90,7 +90,7 @@ const Nav = ({ openNav }: Props) => {
         <div className="flex items-center flex-shrink-0 ml-auto space-x-4">
           <button
             className="hidden lg:block px-4 py-2 sm:px-6 sm:py-2.5 text-white font-semibold text-xs sm:text-sm bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all duration-200 rounded-lg shadow-lg hover:shadow-purple-500/30 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-gray-900"
-            onClick={(e) => handleSmoothScroll(e as any, "#contact")}
+            onClick={(e) => handleSmoothScroll(e, "#contact")}
             type="button"
           >
             Contact me

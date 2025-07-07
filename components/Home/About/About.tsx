@@ -1,5 +1,5 @@
 "use client";
-import { aboutInfo, BaseInfo } from "@/Data/data";
+import { aboutInfo } from "@/Data/data";
 import React from "react";
 import {
   FaCode,

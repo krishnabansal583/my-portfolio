@@ -7,10 +7,8 @@ import {
   FaSchool,
   FaCalendarAlt,
   FaMapMarkerAlt,
-  FaTrophy,
   FaChevronRight,
   FaBook,
-  FaStar,
   FaAward,
   FaUserGraduate,
   FaMedal,
@@ -150,11 +148,11 @@ const cardVariants: Variants = {
 const Education = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
-  const stats = {
-    institutions: educationData.length,
-    gpa: "7.4/10",
-    jeeRank: "27,525",
-  };
+  // const stats = {
+  //   institutions: educationData.length,
+  //   gpa: "7.4/10",
+  //   jeeRank: "27,525",
+  // };
 
   return (
     <div className="min-h-screen pt-24 pb-32 bg-gradient-to-b from-[#0a0412] via-[#1a0d2e] to-[#2a1b4a] relative overflow-hidden">

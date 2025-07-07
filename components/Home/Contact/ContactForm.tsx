@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import {
   Mail,
-  Phone,
-  MapPin,
   Send,
   User,
   MessageSquare,
@@ -13,7 +11,6 @@ import {
   Loader,
 } from "lucide-react";
 
-// Define types for form state and errors
 interface FormData {
   name: string;
   email: string;
@@ -41,7 +38,6 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<string | null>(null);
 
-  // EmailJS configuration - Replace with your actual IDs
   const EMAILJS_SERVICE_ID = "service_i489yub";
   const EMAILJS_TEMPLATE_ID = "template_iqzcgjx";
   const EMAILJS_PUBLIC_KEY = "9edI0mfAqeI-5HY-P";
@@ -88,14 +84,12 @@ const ContactForm = () => {
     setSubmitStatus(null);
 
     try {
-      // Send email using EmailJS
       const templateParams = {
-        to_email: "krishnabansal583@gmail.com", // Your email
+        to_email: "krishnabansal583@gmail.com",
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        // Add any other template variables you need
       };
 
       await emailjs.send(
@@ -109,7 +103,6 @@ const ContactForm = () => {
       setFormData({ name: "", email: "", subject: "", message: "" });
       setErrors({});
 
-      // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000);
     } catch (error) {
       console.error("EmailJS Error:", error);
@@ -126,7 +119,6 @@ const ContactForm = () => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }

@@ -1,3 +1,4 @@
+"use client";
 import { navLinks } from "@/constants/contants";
 import Link from "next/link";
 import React, { useEffect } from "react";
@@ -35,7 +36,9 @@ const MobNav = ({ closeNav, showNav }: Props) => {
   }, [showNav, closeNav]);
 
   const handleSmoothScroll = (
-    e: React.MouseEvent<HTMLAnchorElement>,
+    e:
+      | React.MouseEvent<HTMLAnchorElement>
+      | React.MouseEvent<HTMLButtonElement>,
     url: string
   ) => {
     e.preventDefault();
@@ -99,7 +102,7 @@ const MobNav = ({ closeNav, showNav }: Props) => {
               key={navlink.id}
               href={navlink.url}
               scroll={false}
-              onClick={(e) => handleSmoothScroll(e as any, navlink.url)}
+              onClick={(e) => handleSmoothScroll(e, navlink.url)}
               className="group relative flex items-center px-4 py-4 text-lg font-medium text-white/90 hover:text-white rounded-lg hover:bg-white/5 transition-all duration-200 border-l-4 border-transparent hover:border-purple-400"
               style={{
                 animationDelay: showNav ? `${index * 50}ms` : "0ms",
@@ -107,7 +110,7 @@ const MobNav = ({ closeNav, showNav }: Props) => {
             >
               <span className="relative">
                 {navlink.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 είναι-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
               </span>
             </Link>
           ))}
@@ -117,7 +120,7 @@ const MobNav = ({ closeNav, showNav }: Props) => {
         <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-white/10 bg-gradient-to-t from-black/20 to-transparent">
           <button
             className="w-full px-6 py-4 text-white font-semibold text-base bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all duration-200 rounded-lg shadow-lg hover:shadow-purple-500/30 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-gray-900"
-            onClick={(e) => handleSmoothScroll(e as any, "#contact")}
+            onClick={(e) => handleSmoothScroll(e, "#contact")}
             type="button"
           >
             Get In Touch

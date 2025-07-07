@@ -4,15 +4,12 @@ import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import {
   FaBuilding,
-  FaCode,
   FaCalendarAlt,
   FaMapMarkerAlt,
   FaRoute,
   FaChevronRight,
-  FaUsers,
   FaChartLine,
   FaTools,
-  FaClock,
 } from "react-icons/fa";
 
 interface ExperienceItem {
@@ -113,9 +110,6 @@ const cardVariants: Variants = {
 
 const Experience = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
-  const [selectedExperience, setSelectedExperience] = useState<null | number>(
-    null
-  );
 
   return (
     <div className="min-h-screen pt-24 pb-32 bg-gradient-to-b from-[#0a0412] via-[#1a0d2e] to-[#2a1b4a] relative overflow-hidden">

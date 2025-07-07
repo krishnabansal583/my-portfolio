@@ -6,12 +6,11 @@ import {
   FaDownload,
   FaGithub,
   FaLinkedin,
-  FaTwitter,
   FaEnvelope,
   FaMapMarkerAlt,
   FaCalendarAlt,
   FaHeart,
-  FaCode,
+  
 } from "react-icons/fa";
 import {
   HiArrowDown,
@@ -77,12 +76,13 @@ const Hero = () => {
     else setTimeOfDay("Good Evening");
   }, []);
 
+  // Move handleMouseMove outside useEffect to avoid re-creating it on every render
+  const handleMouseMove = (e: MouseEvent) => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+  };
+
   // Mouse tracking for interactive effects
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);

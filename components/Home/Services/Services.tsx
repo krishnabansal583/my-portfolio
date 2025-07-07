@@ -14,16 +14,6 @@ const Services = () => {
     },
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50, rotateX: -10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      rotateX: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
     <div className="pt-24 pb-32 bg-gradient-to-b from-[#0a0412] via-[#1a0d2e] to-[#2a1b4a] relative overflow-hidden">
       {/* Enhanced Background Elements */}
@@ -65,7 +55,7 @@ const Services = () => {
           viewport={{ once: true }}
         >
           {servicesData?.length > 0 ? (
-            servicesData.map((service: Service, index: number) => (
+            servicesData.map((service: Service) => (
               <motion.div
                 key={service.id}
                 style={{ transformStyle: "preserve-3d" }}
