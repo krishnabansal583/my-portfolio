@@ -129,7 +129,7 @@ const ContactForm = () => {
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-white mb-2">Get In Touch</h2>
         <p className="text-gray-400">
-          Hire me! Let's discuss how we can work together.
+          Hire me! Let&apos;s discuss how we can work together.
         </p>
       </div>
 
@@ -137,7 +137,7 @@ const ContactForm = () => {
         <div className="mb-6 p-4 bg-green-900/50 border border-green-500 rounded-lg flex items-center gap-3">
           <CheckCircle className="text-green-400" size={20} />
           <span className="text-green-400 font-medium">
-            Message sent successfully! I'll get back to you soon.
+            Message sent successfully! I&apos;ll get back to you soon.
           </span>
         </div>
       )}

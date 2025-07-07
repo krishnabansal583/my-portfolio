@@ -26,7 +26,7 @@ const ContactInfo = () => {
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="text-3xl font-bold text-white mb-4">Let's Connect</h2>
+        <h2 className="text-3xl font-bold text-white mb-4">Let&apos;s Connect</h2>
       </div>
 
       <div className="space-y-6">

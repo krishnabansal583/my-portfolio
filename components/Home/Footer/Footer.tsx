@@ -143,9 +143,7 @@ const Footer = () => {
 
             {/* Contact */}
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-white">
-                Let's Connect
-              </h4>
+              <h4 className="text-lg font-semibold text-white">Let&apos;s Connect</h4>
               <div className="flex space-x-3">
                 {socialLinks.map((social, index) => (
                   <a

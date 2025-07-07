@@ -1,7 +1,7 @@
 "use client";
 import { BaseInfo } from "@/Data/data";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import {
   FaDownload,
   FaGithub,
@@ -29,12 +29,13 @@ const Hero = () => {
   const [timeOfDay, setTimeOfDay] = useState("");
   const [downloadStatus, setDownloadStatus] = useState("");
 
-  const roles = [
+  // Move roles array inside useMemo to fix react-hooks/exhaustive-deps warning
+  const roles = useMemo(() => [
     BaseInfo.position,
     "Software Developer",
     "Full Stack Developer",
     "Problem Solver",
-  ];
+  ], [BaseInfo.position]);
 
   // Handle CV download
   const handleDownloadCV = () => {
@@ -201,7 +202,7 @@ const Hero = () => {
                   <HiSparkles className="w-4 h-4 text-white" />
                 </div>
               </div>
-              <span className="text-gray-300 text-lg">{timeOfDay}, I'm</span>
+              <span className="text-gray-300 text-lg">{timeOfDay}, I&apos;m</span>
             </div>
 
             {/* Name - Moderately Larger */}
