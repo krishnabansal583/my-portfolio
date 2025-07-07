@@ -76,16 +76,11 @@ const Nav = ({ openNav }: Props) => {
                 key={navlink.id}
                 href={navlink.url}
                 scroll={false}
-                passHref
-                legacyBehavior
+                onClick={(e) => handleSmoothScroll(e as any, navlink.url)}
+                className="nav__link relative text-white transition-colors duration-200 hover:text-purple-400 cursor-pointer group"
               >
-                <a
-                  onClick={(e) => handleSmoothScroll(e, navlink.url)}
-                  className="nav__link relative text-white transition-colors duration-200 hover:text-purple-400 cursor-pointer group"
-                >
-                  {navlink.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                {navlink.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </div>

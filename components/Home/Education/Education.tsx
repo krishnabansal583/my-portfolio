@@ -100,7 +100,7 @@ const educationData: EducationItem[] = [
     achievements: [
       "Maintaining consistent academic performance with 7.4 SGPA",
       "Specializing in Full Stack Web Development",
-      "Focused on DSA with consistancy on leetcode",
+      "Focused on DSA with consistency on Leetcode",
       "Hands-on experience with modern technologies",
       "Working on real-world projects and internships",
     ],
@@ -152,7 +152,6 @@ const Education = () => {
 
   const stats = {
     institutions: educationData.length,
-
     gpa: "7.4/10",
     jeeRank: "27,525",
   };
@@ -161,36 +160,6 @@ const Education = () => {
     <div className="min-h-screen pt-24 pb-32 bg-gradient-to-b from-[#0a0412] via-[#1a0d2e] to-[#2a1b4a] relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Floating Academic Elements */}
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute"
-            style={{
-              left: Math.random() * 100 + "%",
-              top: Math.random() * 100 + "%",
-            }}
-            animate={{
-              y: [0, Math.random() * 100 - 50],
-              x: [0, Math.random() * 60 - 30],
-              rotate: [0, Math.random() * 360],
-              opacity: [0.1, 0.4, 0.1],
-            }}
-            transition={{
-              duration: Math.random() * 15 + 10,
-              repeat: Infinity,
-              repeatType: "reverse",
-              delay: Math.random() * 5,
-            }}
-          >
-            {Math.random() > 0.5 ? (
-              <FaBook className="w-4 h-4 text-blue-400/30" />
-            ) : (
-              <FaGraduationCap className="w-4 h-4 text-purple-400/30" />
-            )}
-          </motion.div>
-        ))}
-
         {/* Background Gradient Blobs */}
         <motion.div
           className="absolute -top-40 -left-40 w-112 h-112 bg-purple-600/10 rounded-full blur-3xl"
@@ -219,54 +188,6 @@ const Education = () => {
             </span>
           </h2>
         </motion.div>
-
-        {/* Academic Stats */}
-        {/* <motion.div
-          className="mb-16 bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-2xl p-8 backdrop-blur-sm border border-slate-600/30"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <h3 className="text-2xl font-bold text-white text-center mb-8">Academic Overview</h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <motion.div 
-              className="text-center p-4 bg-slate-700/30 rounded-xl"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              <FaSchool className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-              <div className="text-3xl font-bold text-blue-400 mb-1">{stats.institutions}</div>
-              <div className="text-gray-300">Institutions</div>
-            </motion.div>
-            <motion.div 
-              className="text-center p-4 bg-slate-700/30 rounded-xl"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              <FaCalendarAlt className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-        
-              <div className="text-gray-300">Years of Study</div>
-            </motion.div>
-            <motion.div 
-              className="text-center p-4 bg-slate-700/30 rounded-xl"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              <FaStar className="w-8 h-8 text-green-400 mx-auto mb-2" />
-              <div className="text-3xl font-bold text-green-400 mb-1">{stats.gpa}</div>
-              <div className="text-gray-300">Current SGPA</div>
-            </motion.div>
-            <motion.div 
-              className="text-center p-4 bg-slate-700/30 rounded-xl"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              <FaTrophy className="w-8 h-8 text-orange-400 mx-auto mb-2" />
-              <div className="text-3xl font-bold text-orange-400 mb-1">{stats.jeeRank}</div>
-              <div className="text-gray-300">JEE Advanced Rank</div>
-            </motion.div>
-          </div>
-        </motion.div> */}
 
         {/* Education Timeline */}
         <div className="relative max-w-6xl mx-auto">
@@ -459,11 +380,12 @@ const Education = () => {
                     {/* Hover Effect Border */}
                     <motion.div
                       className="absolute inset-0 border-2 border-transparent rounded-2xl"
+                      style={{ borderColor: "rgba(0, 0, 0, 0)" }}
                       animate={{
                         borderColor:
                           hoveredId === education.id
                             ? "rgba(59, 130, 246, 0.4)"
-                            : "transparent",
+                            : "rgba(0, 0, 0, 0)",
                         boxShadow:
                           hoveredId === education.id
                             ? "0 0 40px rgba(59, 130, 246, 0.2)"

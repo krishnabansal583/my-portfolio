@@ -43,35 +43,8 @@ const Project = () => {
 
   return (
     <div className="pt-24 pb-32 bg-gradient-to-b from-[#0a0412] via-[#1a0d2e] to-[#2a1b4a] relative overflow-hidden">
-      {/* Enhanced Background Elements - Similar to Services */}
+      {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Floating Particles with 3D Effect */}
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-gradient-to-r from-purple-500/30 to-blue-500/30 shadow-lg"
-            style={{
-              width: Math.random() * 8 + 3 + "px",
-              height: Math.random() * 8 + 3 + "px",
-              left: Math.random() * 100 + "%",
-              top: Math.random() * 100 + "%",
-              transform: `translateZ(${Math.random() * 40}px)`,
-            }}
-            animate={{
-              y: [0, Math.random() * 100 - 50],
-              x: [0, Math.random() * 60 - 30],
-              opacity: [0.2, 0.6, 0.2],
-              scale: [1, 1.3, 1],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 6,
-              repeat: Infinity,
-              repeatType: "reverse",
-              delay: Math.random() * 4,
-            }}
-          />
-        ))}
-
         {/* Dynamic Gradient Blobs */}
         <motion.div
           className="absolute -top-32 -left-32 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl"
@@ -96,7 +69,7 @@ const Project = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
-        {/* Enhanced Section Header - Similar to Experience */}
+        {/* Enhanced Section Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: -30 }}

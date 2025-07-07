@@ -120,31 +120,6 @@ const Experience = () => {
   return (
     <div className="min-h-screen pt-24 pb-32 bg-gradient-to-b from-[#0a0412] via-[#1a0d2e] to-[#2a1b4a] relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(25)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 shadow-lg"
-            style={{
-              width: Math.random() * 10 + 4 + "px",
-              height: Math.random() * 10 + 4 + "px",
-              left: Math.random() * 100 + "%",
-              top: Math.random() * 100 + "%",
-            }}
-            animate={{
-              y: [0, Math.random() * 120 - 60],
-              x: [0, Math.random() * 80 - 40],
-              opacity: [0.1, 0.5, 0.1],
-              scale: [1, 1.4, 1],
-            }}
-            transition={{
-              duration: Math.random() * 12 + 8,
-              repeat: Infinity,
-              repeatType: "reverse",
-              delay: Math.random() * 5,
-            }}
-          />
-        ))}
-
         {/* Journey Path Background */}
         <motion.div
           className="absolute top-1/4 left-1/4 w-96 h-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-sm"

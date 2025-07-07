@@ -1,3 +1,8 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Righteous&family=Audiowide&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +11,9 @@
   .nav__link {
     position: relative;
     font-weight: 500;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     transition: color 0.3s ease;
   }
 
@@ -27,6 +35,9 @@
   .nav__link--mobile {
     position: relative;
     font-weight: 500;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     transition: all 0.3s ease;
   }
 
@@ -49,6 +60,10 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html {
@@ -159,6 +174,7 @@
       scroll-behavior: auto;
     }
   }
+
   .text-bg {
     background-image: linear-gradient(to right, #aa00f8, #fceabb);
     background-clip: text;
@@ -187,5 +203,295 @@
     html {
       scroll-behavior: smooth;
     }
+  }
+
+  /* Typography Classes */
+  .font-display {
+    font-family: 'Audiowide', cursive;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .font-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .font-body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .font-mono {
+    font-family: 'Fira Code', monospace;
+    font-weight: 400;
+  }
+
+  .font-tech {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .font-bold-display {
+    font-family: 'Righteous', cursive;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Heading Styles */
+  .heading-hero {
+    font-family: 'Audiowide', cursive;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ff0080, #ff8c00, #40e0d0, #ee82ee);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 400%;
+    animation: psychedelicGradient 4s ease infinite;
+    text-shadow: 0 0 30px rgba(255, 0, 128, 0.3);
+  }
+
+  .heading-section {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #00ffff;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+
+  .heading-card {
+    font-family: 'Righteous', cursive;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .text-elegant {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    font-size: 1.1em;
+  }
+
+  .text-code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95em;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    background: linear-gradient(135deg, #00ff00, #00ffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-subtitle {
+    font-family: 'Exo 2', sans-serif;
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    opacity: 0.9;
+  }
+
+  .text-body-large {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+  }
+
+  .text-body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+
+  .text-small {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  /* Special Effects */
+  @keyframes psychedelicGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 100% 50%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    75% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes neonGlow {
+    0%, 100% {
+      text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+    }
+    50% {
+      text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+    }
+  }
+
+  .text-gradient-cyber {
+    background: linear-gradient(135deg, #00ff00, #00ffff, #ff00ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: psychedelicGradient 3s ease infinite;
+  }
+
+  .text-gradient-neon {
+    background: linear-gradient(135deg, #ff0080, #ff8c00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: neonGlow 2s ease-in-out infinite alternate;
+  }
+
+  .text-gradient-electric {
+    background: linear-gradient(135deg, #ff6b35, #f7931e, #ffd700, #00ff00, #00bfff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 300%;
+    animation: psychedelicGradient 4s ease infinite;
+  }
+
+  .text-glow-blue {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    animation: neonGlow 2s ease-in-out infinite alternate;
+  }
+
+  .text-glow-pink {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    animation: neonGlow 2s ease-in-out infinite alternate;
+  }
+
+  .text-cyberpunk {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: linear-gradient(135deg, #00ff00, #ff00ff, #00ffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: psychedelicGradient 3s ease infinite;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+
+  /* Responsive Typography */
+  @media (max-width: 768px) {
+    .heading-hero {
+      font-size: clamp(2rem, 6vw, 3rem);
+    }
+    
+    .heading-section {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+    
+    .text-body-large {
+      font-size: 1.125rem;
+    }
+  }
+
+  /* Enhanced readability */
+  p {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  code, pre {
+    font-family: 'Fira Code', monospace;
+    font-weight: 500;
+  }
+
+  /* Button Typography */
+  .btn-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  /* Navigation Typography */
+  .nav-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  /* Futuristic Text Effects */
+  .text-matrix {
+    font-family: 'Fira Code', monospace;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+  }
+
+  .text-retro {
+    font-family: 'Audiowide', cursive;
+    background: linear-gradient(135deg, #ff6b35, #f7931e, #ffd700);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .text-tech-header {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: linear-gradient(135deg, #00bfff, #1e90ff, #0066cc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }

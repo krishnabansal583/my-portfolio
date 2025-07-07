@@ -42,7 +42,8 @@ const About = () => {
       icon: FaCode,
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-800/20",
-      borderColor: "border-blue-500/30",
+      borderColor: "rgba(59, 130, 246, 0.3)",
+      borderColorHover: "rgba(59, 130, 246, 0.5)",
       description:
         "Building responsive interfaces with React, Next.js, and modern CSS frameworks",
     },
@@ -51,7 +52,8 @@ const About = () => {
       icon: FaServer,
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-800/20",
-      borderColor: "border-orange-500/30",
+      borderColor: "rgba(249, 115, 22, 0.3)",
+      borderColorHover: "rgba(249, 115, 22, 0.5)",
       description:
         "Developing APIs and server logic with Node.js, Express, and MongoDB",
     },
@@ -60,7 +62,8 @@ const About = () => {
       icon: FaLayerGroup,
       color: "from-green-500 to-emerald-500",
       bgColor: "bg-green-800/20",
-      borderColor: "border-green-500/30",
+      borderColor: "rgba(16, 185, 129, 0.3)",
+      borderColorHover: "rgba(16, 185, 129, 0.5)",
       description: "End-to-end web application development with MERN stack",
     },
     {
@@ -68,7 +71,8 @@ const About = () => {
       icon: FaDatabase,
       color: "from-purple-500 to-pink-500",
       bgColor: "bg-purple-800/20",
-      borderColor: "border-purple-500/30",
+      borderColor: "rgba(168, 85, 247, 0.3)",
+      borderColorHover: "rgba(168, 85, 247, 0.5)",
       description: "Designing and optimizing MongoDB and MySQL databases",
     },
   ];
@@ -100,33 +104,6 @@ const About = () => {
     <div className="pt-24 pb-32 bg-gradient-to-b from-[#0a0412] via-[#1a0d2e] to-[#2a1b4a] relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Floating Particles with 3D Effect */}
-        {[...Array(25)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-gradient-to-r from-purple-500/30 to-blue-500/30 shadow-lg"
-            style={{
-              width: Math.random() * 10 + 4 + "px",
-              height: Math.random() * 10 + 4 + "px",
-              left: Math.random() * 100 + "%",
-              top: Math.random() * 100 + "%",
-              transform: `translateZ(${Math.random() * 50}px)`,
-            }}
-            animate={{
-              y: [0, Math.random() * 120 - 60],
-              x: [0, Math.random() * 80 - 40],
-              opacity: [0.2, 0.7, 0.2],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: Math.random() * 12 + 8,
-              repeat: Infinity,
-              repeatType: "reverse",
-              delay: Math.random() * 5,
-            }}
-          />
-        ))}
-
         {/* Dynamic Gradient Blobs */}
         <motion.div
           className="absolute -top-32 -left-32 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl"
@@ -141,7 +118,7 @@ const About = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
-        {/* Enhanced Section Header - Same as Services */}
+        {/* Enhanced Section Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: -30 }}
@@ -200,8 +177,12 @@ const About = () => {
                   {skillCategories.map((skill, index) => (
                     <motion.div
                       key={index}
-                      whileHover={{ y: -5 }}
-                      className={`group relative p-4 ${skill.bgColor} backdrop-blur-sm rounded-xl border ${skill.borderColor} transition-all duration-300 cursor-pointer`}
+                      initial={{ borderColor: skill.borderColor }}
+                      animate={{ borderColor: skill.borderColor }}
+                      whileHover={{ y: -5, borderColor: skill.borderColorHover }}
+                      className={`group relative p-4 ${skill.bgColor} backdrop-blur-sm rounded-xl border`}
+                      style={{ borderColor: skill.borderColor }}
+                      transition={{ duration: 0.3 }}
                     >
                       <div className="flex items-center space-x-3 mb-2">
                         <div

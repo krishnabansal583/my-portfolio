@@ -99,21 +99,16 @@ const MobNav = ({ closeNav, showNav }: Props) => {
               key={navlink.id}
               href={navlink.url}
               scroll={false}
-              passHref
-              legacyBehavior
+              onClick={(e) => handleSmoothScroll(e as any, navlink.url)}
+              className="group relative flex items-center px-4 py-4 text-lg font-medium text-white/90 hover:text-white rounded-lg hover:bg-white/5 transition-all duration-200 border-l-4 border-transparent hover:border-purple-400"
+              style={{
+                animationDelay: showNav ? `${index * 50}ms` : "0ms",
+              }}
             >
-              <a
-                onClick={(e) => handleSmoothScroll(e, navlink.url)}
-                className="group relative flex items-center px-4 py-4 text-lg font-medium text-white/90 hover:text-white rounded-lg hover:bg-white/5 transition-all duration-200 border-l-4 border-transparent hover:border-purple-400"
-                style={{
-                  animationDelay: showNav ? `${index * 50}ms` : "0ms",
-                }}
-              >
-                <span className="relative">
-                  {navlink.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
-                </span>
-              </a>
+              <span className="relative">
+                {navlink.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
+              </span>
             </Link>
           ))}
         </nav>
