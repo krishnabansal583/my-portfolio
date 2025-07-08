@@ -45,8 +45,8 @@ const Hero = () => {
     setTimeout(() => {
       try {
         const link = document.createElement("a");
-        link.href = "/images/Krishna_Bansal_Resume.pdf"; // Path to your PDF in public/images
-        link.download = "Krishna_Bansal_Resume.pdf"; // Name of the downloaded file
+        link.href = "/images/Krishna_Bansal_Resume.pdf"; 
+        link.download = "Krishna_Bansal_Resume.pdf"; 
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
